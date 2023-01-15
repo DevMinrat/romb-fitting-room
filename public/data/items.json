@@ -1,7 +1,65 @@
 [
   {
     "parentId": "1",
+    "parentName": "forms",
+    "zIndex": "5",
+    "items": [
+      {
+        "id": "1",
+        "name": "Форма 1",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/forms/Form_0001.png",
+        "characters": {
+          "speed": "+2%",
+          "strength": "+1%"
+        }
+      },
+      {
+        "id": "2",
+        "name": "Форма 2",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/forms/Form_0002.png",
+        "characters": {
+          "accuracy": "+3%",
+          "power": "+1%"
+        }
+      },
+      {
+        "id": "3",
+        "name": "Форма 3",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/forms/Form_0003.png",
+        "characters": {
+          "health": "+5%",
+          "power": "+1%",
+          "speed": "-2%"
+        }
+      },
+      {
+        "id": "4",
+        "name": "Форма 4",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/forms/Form_0004.png",
+        "characters": {
+          "health": "+1%"
+        }
+      },
+      {
+        "id": "5",
+        "name": "Форма 5",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/forms/Form_0005.png",
+        "characters": {
+          "health": "+3%",
+          "speed": "-2%"
+        }
+      }
+    ]
+  },
+  {
+    "parentId": "2",
     "parentName": "helmets",
+    "zIndex": "10",
     "items": [
       {
         "id": "1",
@@ -56,8 +114,107 @@
     ]
   },
   {
-    "parentId": "2",
+    "parentId": "3",
+    "parentName": "gloves",
+    "zIndex": "4",
+    "items": [
+      {
+        "id": "1",
+        "name": "Перчатки 1",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/gloves/gloves_0001.png",
+        "characters": {
+          "speed": "+2%",
+          "strength": "+1%"
+        }
+      },
+      {
+        "id": "2",
+        "name": "Перчатки 2",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/gloves/gloves_0002.png",
+        "characters": {
+          "accuracy": "+3%",
+          "power": "+1%"
+        }
+      },
+      {
+        "id": "3",
+        "name": "Перчатки 3",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/gloves/gloves_0003.png",
+        "characters": {
+          "health": "+5%",
+          "power": "+1%",
+          "speed": "-2%"
+        }
+      },
+      {
+        "id": "4",
+        "name": "Перчатки 4",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/gloves/gloves_0004.png",
+        "characters": {
+          "health": "+1%"
+        }
+      }
+    ]
+  },
+  {
+    "parentId": "4",
+    "parentName": "bodies",
+    "zIndex": "7",
+    "items": [
+      {
+        "id": "1",
+        "name": "Тело 1",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/bodies/Body_0001.png",
+        "race": "hybrid",
+        "characters": {
+          "speed": "+2%",
+          "strength": "+1%"
+        }
+      },
+      {
+        "id": "2",
+        "name": "Тело 2",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/bodies/Body_0002.png",
+        "race": "mongoloid",
+        "characters": {
+          "accuracy": "+3%",
+          "power": "+1%"
+        }
+      },
+      {
+        "id": "3",
+        "name": "Тело 3",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/bodies/Body_0003.png",
+        "race": "negroid",
+        "characters": {
+          "health": "+5%",
+          "power": "+1%",
+          "speed": "-2%"
+        }
+      },
+      {
+        "id": "4",
+        "name": "Тело 4",
+        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
+        "imgUrl": "images/bodies/Body_0004.png",
+        "race": "caucasoid",
+        "characters": {
+          "health": "+1%"
+        }
+      }
+    ]
+  },
+  {
+    "parentId": "5",
     "parentName": "noses",
+    "zIndex": "9",
     "items": [
       {
         "id": "1",
@@ -238,8 +395,9 @@
     ]
   },
   {
-    "parentId": "3",
+    "parentId": "6",
     "parentName": "mouth",
+    "zIndex": "8",
     "items": [
       {
         "id": "1",
@@ -284,58 +442,9 @@
     ]
   },
   {
-    "parentId": "4",
-    "parentName": "bodies",
-    "items": [
-      {
-        "id": "1",
-        "name": "Тело 1",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/bodies/Body_0001.png",
-        "race": "hybrid",
-        "characters": {
-          "speed": "+2%",
-          "strength": "+1%"
-        }
-      },
-      {
-        "id": "2",
-        "name": "Тело 2",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/bodies/Body_0002.png",
-        "race": "mongoloid",
-        "characters": {
-          "accuracy": "+3%",
-          "power": "+1%"
-        }
-      },
-      {
-        "id": "3",
-        "name": "Тело 3",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/bodies/Body_0003.png",
-        "race": "negroid",
-        "characters": {
-          "health": "+5%",
-          "power": "+1%",
-          "speed": "-2%"
-        }
-      },
-      {
-        "id": "4",
-        "name": "Тело 4",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/bodies/Body_0004.png",
-        "race": "caucasoid",
-        "characters": {
-          "health": "+1%"
-        }
-      }
-    ]
-  },
-  {
-    "parentId": "5",
+    "parentId": "7",
     "parentName": "eyes",
+    "zIndex": "6",
     "items": [
       {
         "id": "1",
@@ -380,166 +489,9 @@
     ]
   },
   {
-    "parentId": "6",
-    "parentName": "forms",
-    "items": [
-      {
-        "id": "1",
-        "name": "Форма 1",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/forms/Form_0001.png",
-        "characters": {
-          "speed": "+2%",
-          "strength": "+1%"
-        }
-      },
-      {
-        "id": "2",
-        "name": "Форма 2",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/forms/Form_0002.png",
-        "characters": {
-          "accuracy": "+3%",
-          "power": "+1%"
-        }
-      },
-      {
-        "id": "3",
-        "name": "Форма 3",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/forms/Form_0003.png",
-        "characters": {
-          "health": "+5%",
-          "power": "+1%",
-          "speed": "-2%"
-        }
-      },
-      {
-        "id": "4",
-        "name": "Форма 4",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/forms/Form_0004.png",
-        "characters": {
-          "health": "+1%"
-        }
-      },
-      {
-        "id": "5",
-        "name": "Форма 5",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/forms/Form_0005.png",
-        "characters": {
-          "health": "+3%",
-          "speed": "-2%"
-        }
-      }
-    ]
-  },
-  {
-    "parentId": "7",
-    "parentName": "gloves",
-    "items": [
-      {
-        "id": "1",
-        "name": "Перчатки 1",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/gloves/gloves_0001.png",
-        "characters": {
-          "speed": "+2%",
-          "strength": "+1%"
-        }
-      },
-      {
-        "id": "2",
-        "name": "Перчатки 2",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/gloves/gloves_0002.png",
-        "characters": {
-          "accuracy": "+3%",
-          "power": "+1%"
-        }
-      },
-      {
-        "id": "3",
-        "name": "Перчатки 3",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/gloves/gloves_0003.png",
-        "characters": {
-          "health": "+5%",
-          "power": "+1%",
-          "speed": "-2%"
-        }
-      },
-      {
-        "id": "4",
-        "name": "Перчатки 4",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/gloves/gloves_0004.png",
-        "characters": {
-          "health": "+1%"
-        }
-      },
-      {
-        "id": "5",
-        "name": "Шлем 5",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/helmets/Helmet_0005.png",
-        "characters": {
-          "health": "+3%",
-          "speed": "-2%"
-        }
-      }
-    ]
-  },
-  {
     "parentId": "8",
-    "parentName": "backgrounds",
-    "items": [
-      {
-        "id": "1",
-        "name": "Фон 1",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/backgrounds/Background_0001.png",
-        "characters": {
-          "speed": "+2%",
-          "strength": "+1%"
-        }
-      },
-      {
-        "id": "2",
-        "name": "Фон 2",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/backgrounds/Background_0002.png",
-        "characters": {
-          "accuracy": "+3%",
-          "power": "+1%"
-        }
-      },
-      {
-        "id": "3",
-        "name": "Фон 3",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/backgrounds/Background_0003.png",
-        "characters": {
-          "health": "+5%",
-          "power": "+1%",
-          "speed": "-2%"
-        }
-      },
-      {
-        "id": "4",
-        "name": "Фон 4",
-        "descr": "Full coverage face protection, multi-layered technology foam composition, open top and mesh ear coverings vent heat to keep cool.",
-        "imgUrl": "images/backgrounds/Background_0004.png",
-        "characters": {
-          "health": "+1%"
-        }
-      }
-    ]
-  },
-  {
-    "parentId": "9",
     "parentName": "fields",
+    "zIndex": "3",
     "items": [
       {
         "id": "1",

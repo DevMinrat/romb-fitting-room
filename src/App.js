@@ -8,6 +8,7 @@ import AppContext from "./context";
 import setFirstSelectedItems from "./selectedItemsStore";
 
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "./scss/app.scss";
 
 setFirstSelectedItems();
@@ -46,7 +47,7 @@ function App() {
           <div className="fitting-room__inner">
             <Fighter />
             <Slider onChangePart={onChangePart} />
-            <Info />
+            {/* <Info /> */}
           </div>
         </div>
       </div>
