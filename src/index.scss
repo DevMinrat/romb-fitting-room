@@ -1,0 +1,55 @@
+$primary: #ff8a00;
+$secondary: #97d8ff;
+$black: #212121;
+$gray: #616161;
+
+$xl-bp: 1024px;
+$lg-bp: 920px;
+$sm-bp: 500px;
+
+@mixin breakpoint($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@import "scss/vendor/reset";
+
+html {
+  box-sizing: border-box;
+  font-size: calc(100vw / 1920 * 10);
+
+  // @include breakpoint($xl-bp) {
+  //   font-size: calc(100vw / 1600 * 10);
+  // }
+
+  @include breakpoint($xl-bp) {
+    font-size: calc(100vw / 1385 * 10);
+  }
+  @include breakpoint($lg-bp) {
+    font-size: calc(100vw / 830 * 10);
+  }
+  @include breakpoint($sm-bp) {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: white;
+
+  background-color: #141415;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
+}

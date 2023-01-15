@@ -1,0 +1,46 @@
+.fitting-room {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 28rem;
+
+  background: url("../../public/images/backgrounds/main-bg.jpg") no-repeat;
+  background-size: cover;
+
+  .container {
+    width: 100%;
+    max-width: 180rem;
+
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+}
+
+.figther {
+  position: absolute;
+}
+
+.variablesSlider .swiper-slide {
+  width: 150px !important;
+  height: 150px !important;
+
+  img {
+    width: 155px;
+    height: 155px;
+  }
+}
+.partsSlider {
+  height: 300px;
+
+  .swiper-slide {
+    width: 150px !important;
+    height: 150px !important;
+
+    img {
+      width: 155px;
+      height: 155px;
+    }
+  }
+}
