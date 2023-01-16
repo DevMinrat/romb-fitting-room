@@ -26,10 +26,7 @@ function setFirstSelectedItems() {
     },
   ];
 
-  localStorage.setItem("firstRenderItems", false);
-
-  if (!JSON.parse(localStorage.getItem("firstRenderItems"))) {
-    localStorage["firstRenderItems"] = true;
+  if (localStorage.getItem("selectedItems") === null) {
     localStorage.setItem("selectedItems", JSON.stringify(objItems));
   }
 }

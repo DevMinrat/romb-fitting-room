@@ -7,11 +7,18 @@ function Fighter() {
   return (
     <div className="fitting-figther">
       {selItems.map((el, index) => {
+        let item;
+
+        if (index !== 4) {
+          item = sliderItems[index].items[el.id];
+        } else {
+          item = sliderItems[index].items[selItems[3].id][el.id];
+        }
         return (
           <img
             key={index}
-            src={sliderItems[index].items[el.id].imgUrl}
-            alt={sliderItems[el.id].name}
+            src={item.imgUrl}
+            alt={item.name}
             style={{
               position: "absolute",
               zIndex: `${sliderItems[index].zIndex}`,

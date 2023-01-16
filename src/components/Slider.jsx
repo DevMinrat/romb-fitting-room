@@ -8,6 +8,13 @@ let currentPart = 0;
 function Slider({ onChangePart }) {
   const { selItems, sliderItems } = React.useContext(AppContext);
   const [selectedSlide, setCurSlider] = React.useState([]);
+  const [race, setRace] = React.useState([]);
+  const [partSlider, setPartSlider] = React.useState([]);
+  const [varSlider, setVarSlider] = React.useState([]);
+
+  const slideTo = (index) => {
+    varSlider.slideTo(index);
+  };
 
   React.useEffect(() => {
     setCurSlider(currentPart);
@@ -24,6 +31,59 @@ function Slider({ onChangePart }) {
 
     return obj;
   };
+
+  const renderVarItems = () => {
+    return sliderItems[selectedSlide].items.map((item, index) => {
+      if (item.hasOwnProperty("imgUrl")) {
+        return (
+          <SwiperSlide key={item.id} onClick={() => varSlider.slideTo(index)}>
+            <img src={item.imgUrl} alt="" />
+          </SwiperSlide>
+        );
+      } else {
+        if (index === selItems[3].id) {
+          return item.map((inclItem, inclIndex) => {
+            return (
+              <SwiperSlide
+                key={inclItem.id}
+                onClick={() => varSlider.slideTo(inclIndex)}
+              >
+                <img src={inclItem.imgUrl} alt="" />
+              </SwiperSlide>
+            );
+          });
+        }
+      }
+    });
+  };
+
+  const renderPartItems = () => {
+    return sliderItems.map((item, index) => {
+      if (index !== 4) {
+        return (
+          <SwiperSlide
+            key={item.parentId}
+            onClick={() => partSlider.slideTo(index)}
+          >
+            <img src={item.items[selItems[index].id].imgUrl} alt="" />
+          </SwiperSlide>
+        );
+      } else {
+        let resArr = item.items[selItems[3].id];
+        if (resArr !== undefined) {
+          return (
+            <SwiperSlide
+              key={item.parentId}
+              onClick={() => partSlider.slideTo(index)}
+            >
+              <img src={resArr[selItems[index].id].imgUrl} alt="" />
+            </SwiperSlide>
+          );
+        }
+      }
+    });
+  };
+
   if (sliderItems.length) {
     return (
       <div className="fitting-slider">
@@ -32,35 +92,35 @@ function Slider({ onChangePart }) {
           spaceBetween={40}
           slidesPerView={"auto"}
           effect="EffectFade"
-          onSlideChange={(swiper) => setCurrentPart(swiper.activeIndex)}
-          onSwiper={(swiper) => setCurrentPart(swiper.activeIndex)}
+          onSlideChange={(swiper) => {
+            setCurrentPart(swiper.activeIndex);
+            slideTo(selItems[swiper.activeIndex].id);
+            setRace(sliderItems[3].items[selItems[3].id].raceBody);
+          }}
+          onSwiper={(swiper) => {
+            setPartSlider(swiper);
+            setCurrentPart(swiper.activeIndex);
+            setRace(sliderItems[3].items[selItems[3].id].raceBody);
+          }}
         >
-          {sliderItems.map((item, index) => {
-            return (
-              <SwiperSlide key={item.parentId}>
-                <img src={item.items[selItems[index].id].imgUrl} alt="" />
-              </SwiperSlide>
-            );
-          })}
+          {renderPartItems()}
         </Swiper>
         <div className="fitting-slider__variables-wrapper">
           <Swiper
+            initialSlide={selItems[selectedSlide].id}
             spaceBetween={0}
             slidesPerView={"auto"}
             direction="vertical"
             onSlideChange={(swiper) =>
               onChangePart(setItemId(swiper, selItems))
             }
-            onSwiper={(swiper) => onChangePart(setItemId(swiper, selItems))}
+            onSwiper={(swiper) => {
+              onChangePart(setItemId(swiper, selItems));
+              setVarSlider(swiper);
+            }}
             className="fitting-slider__variables"
           >
-            {sliderItems[selectedSlide].items.map((item, index) => {
-              return (
-                <SwiperSlide key={item.id}>
-                  <img src={item.imgUrl} alt="" />
-                </SwiperSlide>
-              );
-            })}
+            {renderVarItems()}
           </Swiper>
         </div>
       </div>
