@@ -19,6 +19,7 @@ function Fighter() {
             key={index}
             src={item.imgUrl}
             alt={item.name}
+            // className={item?.className}
             style={{
               position: "absolute",
               zIndex: `${sliderItems[index].zIndex}`,

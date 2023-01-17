@@ -6,9 +6,9 @@ import AppContext from "../context";
 let currentPart = 0;
 
 function Slider({ onChangePart }) {
-  const { selItems, sliderItems } = React.useContext(AppContext);
+  const { selItems, sliderItems, setActiveItem } = React.useContext(AppContext);
   const [selectedSlide, setCurSlider] = React.useState([]);
-  const [race, setRace] = React.useState([]);
+  // const [race, setRace] = React.useState([]);
   const [partSlider, setPartSlider] = React.useState([]);
   const [varSlider, setVarSlider] = React.useState([]);
 
@@ -95,12 +95,18 @@ function Slider({ onChangePart }) {
           onSlideChange={(swiper) => {
             setCurrentPart(swiper.activeIndex);
             slideTo(selItems[swiper.activeIndex].id);
-            setRace(sliderItems[3].items[selItems[3].id].raceBody);
+            setActiveItem([
+              swiper.activeIndex,
+              selItems[swiper.activeIndex].id,
+            ]);
           }}
           onSwiper={(swiper) => {
             setPartSlider(swiper);
             setCurrentPart(swiper.activeIndex);
-            setRace(sliderItems[3].items[selItems[3].id].raceBody);
+            setActiveItem([
+              swiper.activeIndex,
+              selItems[swiper.activeIndex].id,
+            ]);
           }}
         >
           {renderPartItems()}
@@ -111,10 +117,12 @@ function Slider({ onChangePart }) {
             spaceBetween={0}
             slidesPerView={"auto"}
             direction="vertical"
-            onSlideChange={(swiper) =>
-              onChangePart(setItemId(swiper, selItems))
-            }
+            onSlideChange={(swiper) => {
+              onChangePart(setItemId(swiper, selItems));
+              setActiveItem([selectedSlide, swiper.activeIndex]);
+            }}
             onSwiper={(swiper) => {
+              setActiveItem([selectedSlide, swiper.activeIndex]);
               onChangePart(setItemId(swiper, selItems));
               setVarSlider(swiper);
             }}

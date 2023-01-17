@@ -16,6 +16,7 @@ setFirstSelectedItems();
 function App() {
   const [sliderItems, setSliderItems] = React.useState([]);
   const [selItems, setSelItems] = React.useState([]);
+  const [activeItem, setActiveItem] = React.useState([]);
 
   React.useEffect(() => {
     async function fetchData() {
@@ -41,13 +42,15 @@ function App() {
   };
 
   return (
-    <AppContext.Provider value={{ selItems, sliderItems }}>
+    <AppContext.Provider
+      value={{ selItems, sliderItems, activeItem, setActiveItem }}
+    >
       <div className="fitting-room">
         <div className="container">
           <div className="fitting-room__inner">
             <Fighter />
             <Slider onChangePart={onChangePart} />
-            {/* <Info /> */}
+            <Info />
           </div>
         </div>
       </div>
