@@ -8,7 +8,7 @@ import AppContext from "./context";
 import setFirstSelectedItems from "./selectedItemsStore";
 
 import "swiper/css";
-import "swiper/css/effect-fade";
+
 import "./scss/app.scss";
 
 setFirstSelectedItems();

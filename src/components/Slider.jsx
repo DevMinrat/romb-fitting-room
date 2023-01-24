@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
 
 import AppContext from "../context";
 
@@ -34,10 +35,10 @@ function Slider({ onChangePart }) {
 
   const renderVarItems = () => {
     return sliderItems[selectedSlide].items.map((item, index) => {
-      if (item.hasOwnProperty("imgUrl")) {
+      if (item.hasOwnProperty("iconUrl")) {
         return (
           <SwiperSlide key={item.id} onClick={() => varSlider.slideTo(index)}>
-            <img src={item.imgUrl} alt="" />
+            <img src={item.iconUrl} alt="" />
           </SwiperSlide>
         );
       } else {
@@ -48,7 +49,7 @@ function Slider({ onChangePart }) {
                 key={inclItem.id}
                 onClick={() => varSlider.slideTo(inclIndex)}
               >
-                <img src={inclItem.imgUrl} alt="" />
+                <img src={inclItem.iconUrl} alt="" />
               </SwiperSlide>
             );
           });
@@ -65,7 +66,7 @@ function Slider({ onChangePart }) {
             key={item.parentId}
             onClick={() => partSlider.slideTo(index)}
           >
-            <img src={item.items[selItems[index].id].imgUrl} alt="" />
+            <img src={item.items[selItems[index].id].iconUrl} alt="" />
           </SwiperSlide>
         );
       } else {
@@ -76,7 +77,7 @@ function Slider({ onChangePart }) {
               key={item.parentId}
               onClick={() => partSlider.slideTo(index)}
             >
-              <img src={resArr[selItems[index].id].imgUrl} alt="" />
+              <img src={resArr[selItems[index].id].iconUrl} alt="" />
             </SwiperSlide>
           );
         }
@@ -87,34 +88,52 @@ function Slider({ onChangePart }) {
   if (sliderItems.length) {
     return (
       <div className="fitting-slider">
-        <Swiper
-          className="fitting-slider__parts"
-          spaceBetween={40}
-          slidesPerView={"auto"}
-          effect="EffectFade"
-          onSlideChange={(swiper) => {
-            setCurrentPart(swiper.activeIndex);
-            slideTo(selItems[swiper.activeIndex].id);
-            setActiveItem([
-              swiper.activeIndex,
-              selItems[swiper.activeIndex].id,
-            ]);
-          }}
-          onSwiper={(swiper) => {
-            setPartSlider(swiper);
-            setCurrentPart(swiper.activeIndex);
-            setActiveItem([
-              swiper.activeIndex,
-              selItems[swiper.activeIndex].id,
-            ]);
-          }}
-        >
-          {renderPartItems()}
-        </Swiper>
+        <div className="fitting-slider__parts-wrapper">
+          <Swiper
+            modules={[Navigation]}
+            className="fitting-slider__parts"
+            spaceBetween={40}
+            slidesPerView={"auto"}
+            effect="EffectFade"
+            onSlideChange={(swiper) => {
+              setCurrentPart(swiper.activeIndex);
+              slideTo(selItems[swiper.activeIndex].id);
+              setActiveItem([
+                swiper.activeIndex,
+                selItems[swiper.activeIndex].id,
+              ]);
+            }}
+            onSwiper={(swiper) => {
+              setPartSlider(swiper);
+              setCurrentPart(swiper.activeIndex);
+              setActiveItem([
+                swiper.activeIndex,
+                selItems[swiper.activeIndex].id,
+              ]);
+            }}
+            navigation={{
+              nextEl: "#part-btn-next",
+              prevEl: "#part-btn-prev",
+              disabledClass: "disable",
+            }}
+          >
+            {renderPartItems()}
+          </Swiper>
+          <div className="fitting-slider__parts-nav">
+            <div className="swiper-button-prev" id="part-btn-prev">
+              <img src="fs-arrow.svg" alt="prev-slide" />
+            </div>
+            <div className="swiper-button-next" id="part-btn-next">
+              <img src="fs-arrow.svg" alt="next-slide" />
+            </div>
+          </div>
+        </div>
         <div className="fitting-slider__variables-wrapper">
           <Swiper
+            modules={[Navigation]}
+            className="fitting-slider__variables"
             initialSlide={selItems[selectedSlide].id}
-            spaceBetween={0}
+            spaceBetween={20}
             slidesPerView={"auto"}
             direction="vertical"
             onSlideChange={(swiper) => {
@@ -126,10 +145,22 @@ function Slider({ onChangePart }) {
               onChangePart(setItemId(swiper, selItems));
               setVarSlider(swiper);
             }}
-            className="fitting-slider__variables"
+            navigation={{
+              nextEl: "#var-btn-next",
+              prevEl: "#var-btn-prev",
+              disabledClass: "disable",
+            }}
           >
             {renderVarItems()}
           </Swiper>
+          <div className="fitting-slider__variables-nav">
+            <div className="swiper-button-prev" id="var-btn-prev">
+              <img src="fs-arrow.svg" alt="prev-slide" />
+            </div>
+            <div className="swiper-button-next" id="var-btn-next">
+              <img src="fs-arrow.svg" alt="next-slide" />
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -17,7 +17,7 @@ function Fighter() {
         return (
           <img
             key={index}
-            src={item.imgUrl}
+            src={item.imageUrl}
             alt={item.name}
             // className={item?.className}
             style={{
