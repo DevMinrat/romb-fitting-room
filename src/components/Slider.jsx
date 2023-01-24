@@ -92,7 +92,7 @@ function Slider({ onChangePart }) {
           <Swiper
             modules={[Navigation]}
             className="fitting-slider__parts"
-            spaceBetween={40}
+            spaceBetween={20}
             slidesPerView={"auto"}
             effect="EffectFade"
             onSlideChange={(swiper) => {
@@ -133,7 +133,7 @@ function Slider({ onChangePart }) {
             modules={[Navigation]}
             className="fitting-slider__variables"
             initialSlide={selItems[selectedSlide].id}
-            spaceBetween={20}
+            spaceBetween={0}
             slidesPerView={"auto"}
             direction="vertical"
             onSlideChange={(swiper) => {
